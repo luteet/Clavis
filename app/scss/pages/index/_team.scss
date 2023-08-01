@@ -266,7 +266,7 @@
 		text-align: center;
 		font-family: var(--title-font);
 		font-size: 3.125rem;
-		margin: 0 calc(0px - var(--container-padding) * 3);
+		margin: -30px calc(0px - var(--container-padding) * 3) 0;
 		@include _550 {
 			font-size: 4rem;
 		}
