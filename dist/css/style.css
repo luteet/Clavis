@@ -7,16 +7,11 @@ progress,sub,sup {
 }
 
 [type=checkbox],[type=radio],legend {
-    padding: 0;
-    box-sizing: border-box
+    padding: 0
 }
 
 .splide,.splide__container,.splide__slide,sub,sup {
     position: relative
-}
-
-*,.splide__container,.splide__slide,:after,:before,[type=checkbox],[type=radio],legend {
-    box-sizing: border-box
 }
 
 body {
@@ -30,6 +25,10 @@ details,main {
 hr {
     box-sizing: content-box;
     height: 0
+}
+
+*,.splide__container,.splide__slide,:after,:before,[type=checkbox],[type=radio],legend {
+    box-sizing: border-box
 }
 
 code,kbd,pre,samp {
@@ -210,18 +209,15 @@ summary {
     width: 20px
 }
 
-.splide__sr,.visually-hidden {
-    width: 1px;
-    margin: -1px;
-    overflow: hidden
-}
-
 .splide__sr {
     clip: rect(0 0 0 0);
     border: 0;
     height: 1px;
+    margin: -1px;
+    overflow: hidden;
     padding: 0;
-    position: absolute
+    position: absolute;
+    width: 1px
 }
 
 .splide__toggle.is-active .splide__toggle__play,.splide__toggle__pause {
@@ -1624,13 +1620,16 @@ section {
 
 .visually-hidden {
     position: absolute;
+    width: 1px;
     height: 1px;
+    margin: -1px;
     padding: 0;
     border: 0;
     white-space: nowrap;
     -webkit-clip-path: inset(100%);
     clip-path: inset(100%);
-    clip: rect(0 0 0 0)
+    clip: rect(0 0 0 0);
+    overflow: hidden
 }
 
 @font-face {
@@ -1694,10 +1693,10 @@ input::placeholder,textarea::placeholder {
 }
 
 .header__nav,.header__sub-panel {
+    left: 0;
     background: rgba(39,39,44,.9);
     opacity: 0;
-    visibility: hidden;
-    left: 0
+    visibility: hidden
 }
 
 input:focus::-webkit-input-placeholder,textarea:focus::-webkit-input-placeholder {
@@ -1762,13 +1761,16 @@ input:focus::placeholder,textarea:focus::placeholder {
     transition: opacity .3s ease,visibility .3s ease
 }
 
+.header__burger,.header__nav--body,.header__nav--list,.header__tel,.we__body {
+    position: relative
+}
+
 .header._sub-active .header__contacts,.header__burger span:nth-child(2),.header__nav--list>li.hover>ul,.header__nav._mob-menu-active {
     opacity: 1;
     visibility: visible
 }
 
 .header__nav--body {
-    position: relative;
     margin: var(--height-header) 0;
     height: calc(var(--svh,1vh) *100 - var(--height-header) *2);
     overflow-y: auto;
@@ -1779,8 +1781,7 @@ input:focus::placeholder,textarea:focus::placeholder {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    align-items: center;
-    position: relative
+    align-items: center
 }
 
 .header__nav--list>li {
@@ -1906,7 +1907,6 @@ input:focus::placeholder,textarea:focus::placeholder {
 }
 
 .header__tel {
-    position: relative;
     z-index: 4;
     display: inline-flex;
     margin-right: 19px;
@@ -1927,7 +1927,6 @@ input:focus::placeholder,textarea:focus::placeholder {
 }
 
 .header__burger {
-    position: relative;
     width: 20px;
     height: 15px;
     background: rgba(0,0,0,0);
@@ -2023,6 +2022,11 @@ input:focus::placeholder,textarea:focus::placeholder {
     padding-top: 80px
 }
 
+.we__list li,.we__title {
+    line-height: 125%;
+    font-weight: 400
+}
+
 .hero__image {
     grid-column: 2;
     grid-row: 1/4;
@@ -2043,10 +2047,6 @@ input:focus::placeholder,textarea:focus::placeholder {
     overflow: hidden
 }
 
-.we__body {
-    position: relative
-}
-
 .we__title {
     color: #babcc0;
     font-family: var(--title-font);
@@ -2061,9 +2061,11 @@ input:focus::placeholder,textarea:focus::placeholder {
     -ms-user-select: none;
     user-select: none;
     font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
     z-index: -1
+}
+
+.team__slider,.team__slider--slide {
+    position: relative
 }
 
 .we__list {
@@ -2074,8 +2076,6 @@ input:focus::placeholder,textarea:focus::placeholder {
 
 .we__list li {
     font-size: 1.125rem;
-    font-weight: 400;
-    line-height: 125%;
     text-align: center
 }
 
@@ -2097,16 +2097,13 @@ input:focus::placeholder,textarea:focus::placeholder {
 
 .team__slider {
     background: var(--white);
+    z-index: 2;
     padding: 0 0 38px;
     overflow: hidden
 }
 
 .team__slider--track {
     overflow: visible
-}
-
-.team__slider--slide {
-    position: relative
 }
 
 .team__slider-progress {
@@ -2212,7 +2209,7 @@ input:focus::placeholder,textarea:focus::placeholder {
     font-size: 3.125rem;
     margin: 0 calc(0px - var(--container-padding) *3);
     font-weight: 400;
-    line-height: 120%
+    line-height: 140%
 }
 
 .footer__copy,.footer__nav>ul>li>ul>li>a,.footer__privacy a {
@@ -2641,7 +2638,7 @@ input:focus::placeholder,textarea:focus::placeholder {
 
     .team__slogan {
         font-size: 6.875rem;
-        margin: 0 calc(0px - var(--desktop-container-padding) *2)
+        margin: -60px calc(0px - var(--desktop-container-padding) *2) 0
     }
 
     .footer {
