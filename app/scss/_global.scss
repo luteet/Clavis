@@ -1,0 +1,156 @@
+@use 'sass:math';
+
+:root {
+	--title-font: 'Kudryashev Display';
+	--main-font: 'ITC Avant Garde Gothic Std', sans-serif;
+	
+	--accent: #BBFF00;
+	--accent-hover: #d0ff4f;
+	--accent-active: #a3df00;
+
+	--white: #FFF;
+	--black: #000;
+	--dark: #27272C;
+	--light-gray: #D7DADD;
+
+	--desktop-container-padding: 60px;
+	--container-padding: 20px;
+}
+
+html, body {
+	font-size: 16px;
+	min-height: 100%;
+	min-width: 320px;
+}
+
+body {
+
+	font-family: var(--main-font);
+	font-weight: 400;
+	line-height: 150%;
+
+	display: flex;
+	flex-direction: column;
+
+	background: var(--light-gray);
+	color: var(--dark);
+
+	//padding-right: var(--popup-padding);
+
+	&._mob-menu-active {
+		overflow: hidden;
+	}
+
+	&._popup-active {
+		overflow: hidden;
+	}
+	
+}
+
+.image-aspect-ratio {
+	width: 100%; position: relative;
+	padding-top: var(--padding-aspect-ratio);
+}
+
+.image-aspect-ratio img {
+	position: absolute;
+	left: 0; top: 0;
+	width: 100%; height: 100%;
+	object-fit: cover;
+}
+
+section {
+	position: relative;
+	z-index: 2;
+}
+
+.wrapper {
+	flex: 1 1 auto;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	overflow: hidden;
+
+	flex: 1 0 auto;
+	position: relative;
+}
+
+.container {
+	padding-left: var(--container-padding);
+	padding-right: var(--container-padding);
+
+	@include _992 {
+		padding-left: var(--desktop-container-padding);
+		padding-right: var(--desktop-container-padding);
+	}
+	
+	@media (min-width: #{$container}px) {
+		padding-left: max(var(--desktop-container-padding), calc(50% - #{math.div($container, 2)}px));
+		padding-right: max(var(--desktop-container-padding), calc(50% - #{math.div($container, 2)}px));
+	}
+}
+
+.btn {
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	
+	padding: 12px 27px;
+
+	background: var(--accent);
+	color: var(--dark);
+	&._transparent-on-mob {
+		background: transparent;
+		border: 1px solid var(--white);
+		color: var(--white);
+		@include _768 {
+			background: var(--accent);
+			border: 0;
+			color: var(--dark);
+		}
+	}
+
+	font-size: 0.875rem;
+	font-weight: 500;
+	line-height: 115%;
+
+	border-radius: 100px;
+
+	transition: background .3s ease;
+
+	@media (any-hover: hover) {
+		&:hover {
+			background: var(--accent-hover);
+		}
+		
+		&:active {
+			background: var(--accent-active);
+		}
+	}
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px; height: 1px;
+	margin: -1px; padding: 0;
+	border: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.visible-on-desktop {
+	@media (max-width: 991px) {
+		display: none;
+	}
+}
+
+.visible-on-mob {
+	@include _992 {
+		display: none !important;
+	}
+}

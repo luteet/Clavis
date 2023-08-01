@@ -1,0 +1,282 @@
+.team {
+
+	padding-top: 80px;
+
+	@include _992 {
+		padding-top: 210px;
+	}
+
+	&__title {
+		background: var(--white);
+		padding: 40px 0 20px;
+
+		text-align: center;
+		font-family: var(--title-font);
+		font-size: 2.25rem;
+		font-weight: 400;
+		line-height: 111%;
+		letter-spacing: 0.0675rem;
+
+		@include _992 {
+			position: absolute;
+			width: 1px; height: 1px;
+			margin: -1px; padding: 0;
+			border: 0;
+			
+			white-space: nowrap;
+			clip-path: inset(100%);
+			clip: rect(0 0 0 0);
+			overflow: hidden;
+		}
+	}
+
+	// .team__slider
+
+	&__slider {
+
+		background: var(--white);
+
+		padding: 0 0 38px 0;
+
+		@include _992 {
+			padding: 0 60px;
+		}
+		overflow: hidden;
+
+		// .team__slider--track
+
+		&--track {
+			overflow: visible;
+		}
+
+		// .team__slider--list
+
+		&--list {
+		}
+
+		// .team__slider--slide
+
+		&--slide {
+			//height: 80%;
+			position: relative;
+		}
+	}
+
+	&__slider-progress {
+		margin: 20px 20px 0;
+		@include _992 {
+			display: none;
+		}
+
+		//width: 100%;
+		background: #D7DADD;
+
+		&--bar {
+			background: var(--dark);
+			height: 2px;
+			transition: width 400ms ease;
+			width: 0;
+			
+		}
+	}
+
+	// .team__slide
+
+	&__slide {
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		text-align: center;
+
+		padding: 200px 0px 0;
+
+		@include _992 {
+			padding: 0;
+			align-items: stretch;
+			text-align: left;
+		}
+
+		&.is-active &--main &--avatar img {
+			filter: grayscale(0);
+		}
+
+		// .team__slide--add
+
+		&--add {
+			width: 180px;
+
+			@include _992 {
+				left: 0; top: 0;
+				right: auto;
+				transform: translate(0,-100px);
+			}
+
+			@include _container {
+				width: 280px;
+			}
+			//margin-bottom: -180px; margin-top: 30px;
+			position: absolute;
+			right: 0%; top: 0;
+			transform: translate(50%,0px);
+
+			img {
+				filter: grayscale(1);
+			}
+		}
+
+		&--add & {
+			
+			&--name {
+				margin-top: 5px;
+				text-align: center;
+			}
+
+			&--profession {
+				display: block;
+				text-align: center;
+			}
+		}
+
+		// .team__slide--avatar
+
+		&--avatar {
+			width: 180px;
+			margin: auto;
+			@include _992 {
+				margin: 0;
+			}
+			@include _container {
+				width: 280px;
+				margin: 0 40px 0 0;
+			}
+			
+			img {
+				border-radius: 50%;
+				
+			}
+		}
+
+		// .team__slide--avatar-wrapper
+
+		&--avatar-wrapper {
+		}
+
+		// .team__slide--name
+
+		&--name {
+			font-size: 1.125rem;
+			margin-top: 20px;
+			
+			@include _768 {
+				font-size: 1.25rem;
+			}
+			
+			@include _992 {
+				font-size: 1.5rem;
+			}
+			font-weight: 400;
+			line-height: 125%;
+			letter-spacing: 0.075rem;
+		}
+
+		// .team__slide--profession
+
+		&--profession {
+			font-size: 0.625rem;
+			
+			@include _992 {
+				font-size: 0.75rem;
+			}
+
+			color: #BABCC0;
+			font-weight: 600;
+			line-height: 150%;
+			letter-spacing: 0.0313rem;
+			text-transform: uppercase;
+
+			margin-top: 5px;
+		}
+
+		// .team__slide--main
+
+		&--main {
+			@include _992 {
+				display: grid;
+				grid-template-columns: 200px auto;
+				padding-left: 200px;
+			}
+
+			@include _container {
+				grid-template-columns: 320px auto;
+				padding-left: 320px;
+			}
+			
+		}
+
+		&--main & {
+			&--avatar {
+				@include _992 {
+					margin-right: 40px;
+				}
+				grid-column: 1; grid-row: 4 span;
+
+				img {
+					transition: filter .3s ease;
+					filter: grayscale(1);
+				}
+			}
+		}
+
+		// .team__slide--text
+
+		&--text {
+			margin-top: 10px;
+			line-height: 150%;
+			font-size: 0.75rem;
+			@include _768 {
+				font-size: 0.875rem;
+			}
+
+			padding: 0 40px;
+
+			@include _992 {
+				margin-top: 25px;
+				font-size: 1rem;
+				padding: 0;
+				
+			}
+		}
+	}
+
+	// .team__slogan
+
+	&__slogan {
+		color: #BABCC0;
+		display: block;
+		mark {
+			background: transparent;
+			color: var(--white);
+		}
+		text-align: center;
+		font-family: var(--title-font);
+		font-size: 3.125rem;
+		margin: 0 calc(0px - var(--container-padding) * 3);
+		@include _550 {
+			font-size: 4rem;
+		}
+		
+		@include _768 {
+			font-size: 5rem;
+		}
+		
+		@include _992 {
+			font-size: 6.875rem;
+			margin: 0 calc(0px - var(--desktop-container-padding) * 2);
+		}
+		font-weight: 400;
+		line-height: 120%;
+	}
+}

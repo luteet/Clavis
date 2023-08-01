@@ -1,0 +1,93 @@
+.hero {
+	
+	background: #707079;
+
+	@include _768 {
+		display: grid;
+		grid-template-columns: auto 52.15%;
+		grid-template-rows: 0.8fr 1.2fr 1fr;
+		padding-bottom: 0;
+	}
+
+	padding-bottom: 40px;
+
+	padding-top: 40px;
+	@include _992 {
+		padding-top: 120px;
+	}
+
+	// .hero__title
+
+	&__title {
+		grid-column: 1;
+		align-self: self-start;
+		text-align: center;
+
+		@include _768 {
+			text-align: left;
+			padding-bottom: 20px; padding-right: 20px;
+		}
+
+		@include _992 {
+			padding-bottom: 60px; padding-right: 160px;
+		}
+	}
+
+	// .hero__text
+
+	&__text {
+		color: #FFF;
+		grid-column: 1;
+
+		padding-top: 25px;
+		font-size: 0.875rem;
+		line-height: 150%;
+		text-align: center;
+
+		padding-left: 20px; padding-right: 20px;
+		
+		@include _768 {
+			padding-right: 20px; padding-top: 0;
+			padding-left: 0; padding-right: 0;
+			font-size: 1rem;
+			text-align: left;
+		}
+
+		@include _992 {
+			padding-right: 160px;
+		}
+	}
+
+	// .hero__image
+
+	&__image {
+
+		grid-column: 2; grid-row: 1/4;
+		margin-top: 25px;
+		@include _992 {
+			margin-bottom: -40px;
+			margin-top: 0;
+		}
+
+		// .hero__image--wrapper
+
+		&--wrapper {
+			min-height: 100%;
+		}
+	}
+
+	// .hero__btn
+
+	&__btn {
+		
+		margin-top: 40px;
+		width: 100%;
+		@include _768 {
+			margin-top: 20px; margin-right: 20px;	
+			max-width: 220px;
+		}
+		
+		align-self: self-start;
+
+	}
+}
