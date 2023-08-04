@@ -261,7 +261,85 @@ body.addEventListener('click', function (event) {
 	// =-=-=-=-=-=-=-=-=-=-=-=- </click> -=-=-=-=-=-=-=-=-=-=-=-=
 	
 
+	// =-=-=-=-=-=-=-=-=-=-=-=- <about-tour-tab-nav> -=-=-=-=-=-=-=-=-=-=-=-=
 	
+	const aboutTourTabNav = $(".about-tour__tab-nav li a")
+	if(aboutTourTabNav) {
+	
+		event.preventDefault();
+		const nav = aboutTourTabNav.closest('ul'),
+		activeBlock = document.querySelector(nav.querySelector('a.active').getAttribute('href')),
+		block = document.querySelector(aboutTourTabNav.getAttribute('href'));
+
+		if(!aboutTourTabNav.classList.contains('active')) {
+			
+			nav.querySelector('a.active').classList.remove('active')
+			aboutTourTabNav.classList.add('active');
+
+			activeBlock.classList.remove('_active');
+			block.classList.add('_active');
+		}
+	
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </about-tour-tab-nav> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <itinerary-accodrion> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	const aboutTourItineraryItem = $(".about-tour__itinerary-item")
+	if(aboutTourItineraryItem) {
+
+		if(!aboutTourItineraryItem.classList.contains('_animating')) {
+			aboutTourItineraryItem.classList.add('_animating');
+
+			const activeItem = aboutTourItineraryItem.closest('ul').querySelector('.about-tour__itinerary-item._active'),
+			content = aboutTourItineraryItem.querySelector('.about-tour__itinerary-item--content');
+
+			if(activeItem) {
+				const activeItemContent = activeItem.querySelector('.about-tour__itinerary-item--content');
+				if(activeItem == aboutTourItineraryItem) {
+
+					aboutTourItineraryItem.classList.remove('_active')
+					slideUp(content);
+		
+				} else {
+		
+					activeItem.classList.remove('_active');
+					slideUp(activeItemContent);
+					aboutTourItineraryItem.classList.add('_active');
+					slideDown(content);
+		
+				}
+			} else {
+				aboutTourItineraryItem.classList.add('_active');
+				slideDown(content);
+			}
+
+			setTimeout(() => {
+				aboutTourItineraryItem.classList.remove('_animating');
+			},500)
+			
+		}
+		
+	
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </itinerary-accodrion> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <about-tour-accordion> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	const aboutTourAccordionTarget = $(".about-tour__accordion--target")
+	if(aboutTourAccordionTarget) {
+	
+		aboutTourAccordionTarget.classList.toggle('_active')
+	
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </about-tour-accordion> -=-=-=-=-=-=-=-=-=-=-=-=
 	
 
 })
@@ -300,6 +378,18 @@ window.addEventListener('resize', resize)
 
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=
+
+function progressBar(slider) {
+	const bar = slider.root.querySelector( '.slider-progress__bar' );
+	
+	// Updates the bar width whenever the carousel moves:
+	slider.on( 'mounted move', function () {
+	  let end  = slider.Components.Controller.getEnd() + 1,
+	  rate = Math.min( ( slider.index + 1 ) / end, 1 );
+
+	  bar.style.width = String( 100 * rate ) + '%';
+	});
+}
 
 if(document.querySelector('.team__slider')) {
 
@@ -341,17 +431,42 @@ if(document.querySelector('.team__slider')) {
 
 	});
 
-	bar = document.querySelector( '.team__slider-progress--bar' );
-	
-	// Updates the bar width whenever the carousel moves:
-	teamSlider.on( 'mounted move', function () {
-	  let end  = teamSlider.Components.Controller.getEnd() + 1,
-	  rate = Math.min( ( teamSlider.index + 1 ) / end, 1 );
-
-	  bar.style.width = String( 100 * rate ) + '%';
-	} );
+	progressBar(teamSlider)
 
 	teamSlider.mount();
+
+}
+
+
+if(document.querySelector('.services__slider')) {
+
+	const servicesSlider = new Splide('.services__slider', {
+
+		perPage: 2,
+		arrows: false,
+		pagination: false,
+		gap: 60,
+
+		breakpoints: {
+			768: {
+				perPage: 1,
+				gap: 10,
+			},
+		}
+
+	});
+	
+	progressBar(servicesSlider)
+
+	servicesSlider.on('mounted', function () {
+		if(!servicesSlider.root.classList.contains('is-overflow')) {
+			servicesSlider.options.drag = false
+		}
+	})
+
+	servicesSlider.mount();
+
+	
 
 }
 

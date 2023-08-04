@@ -1,105 +1,253 @@
 @@include("html/_header.html")
 
-	<main class="main">
-		<section class="hero container">
-			<h1 class="hero__title main-title">
-				About us
-			</h1>
-			<div class="hero__text">
-				Business and travel professionals have teamed up to create a new style of travel. Such a company, whose services are used by the founders themselves, which meets all our standards.
-			</div>
-			<div class="hero__image">
-				<div class="hero__image--wrapper image-aspect-ratio">
+	<main class="main _footer-margin-none">
+		<section class="hero">
+			<div class="hero__body">
+				<div class="hero__background">
 					<picture>
-						<source srcset="img/index/hero/hero-image.avif" type="image/avif">
-						<source srcset="img/index/hero/hero-image.webp" type="image/webp">
-						<img src="img/index/hero/hero-image.jpg" alt="" width="660" height="440" loading="lazy">
+						<source srcset="img/index/hero/index-hero-image.avif" type="image/avif">
+						<source srcset="img/index/hero/index-hero-image.webp" type="image/webp">
+						<img src="img/index/hero/index-hero-image.jpg" alt="" width="0" height="0" loading="lazy">
+					</picture>
+				</div>
+				<h1 class="hero__title visually-hidden">
+					Clavis
+				</h1>
+				<div class="hero__logo">
+					<img src="img/index/hero/logo.svg" width="360" height="65" alt="Logo">
+				</div>
+				<div class="hero__text">
+					<p>anything, anytime, anywhere</p>
+				</div>
+			</div>
+		</section>
+		<section class="about-us container _min">
+			<div class="about-us__image visible-on-desktop">
+				<div class="about-us__image--wrapper image-aspect-ratio">
+					<picture>
+						<source srcset="img/index/about-us/index-about-us-image.avif" type="image/avif">
+						<source srcset="img/index/about-us/index-about-us-image.webp" type="image/webp">
+						<img src="img/index/about-us/index-about-us-image.jpg" alt="" width="440" height="660" loading="lazy">
 					</picture>
 				</div>
 			</div>
-			<a href="#" class="hero__btn btn _transparent-on-mob">
-				Enquire
-			</a>
+			<div class="about-us__content">
+				<h2 class="about-us__title title">
+					anything, anytime, <mark>anywhere</mark>
+				</h2>
+				<div class="about-us__text">
+					<p>With Clavis it's not just about booking a tour—it's about feeling the <mark>essence of travel.</mark> Our creations are born from our own adventures, ensuring an unparalleled and heartfelt connection with every journey.</p>
+					<p>Unveil the world through our eyes and embark on a voyage <mark>like no other</mark>, where the people, their stories, and the shared love for travel form the very core of the experience. Welcome to Clavis, where every expedition becomes a cherished memory etched in your heart.</p>
+				</div>
+				<div class="about-us__image visible-on-mob image-aspect-ratio">
+					<picture>
+						<source srcset="img/index/about-us/index-about-us-image.avif" type="image/avif">
+						<source srcset="img/index/about-us/index-about-us-image.webp" type="image/webp">
+						<img src="img/index/about-us/index-about-us-image.jpg" alt="" width="320" height="210" loading="lazy">
+					</picture>
+				</div>
+				<a href="#" class="about-us__btn btn _transparent">
+					Upcoming tours
+				</a>
+			</div>
 		</section>
-		<section class="we container">
-			<div class="we__body">
-				<h2 class="we__title">we</h2>
-				<ul class="we__list">
-					<li>
-						are always in touch
-					</li>
-					<li>
-						think about the details
-					</li>
-					<li>
-						are coming up with ideas for your new dreams
-					</li>
-					<li>
-						appreciate your time
-					</li>
-					<li>
-						manage your budget
-					</li>
-					<li>
-						make your dreams come true
-					</li>
+		<section class="services container">
+			<div class="services__body">
+				<h2 class="services__title title">
+					Services
+				</h2>
+				<div class="services__slider splide">
+					<div class="services__slider--track splide__track">
+						<ul class="services__slider--list splide__list">
+							<li class="services__slider--slide services__slide splide__slide">
+								<div class="services__slide--image image-aspect-ratio">
+									<picture>
+										<source srcset="img/index/services/services-image-1.avif" media="(min-width: 992px)" type="image/avif">
+										<source srcset="img/index/services/services-image-1.webp" media="(min-width: 992px)" type="image/webp">
+										<source srcset="img/index/services/services-image-1-mob.avif" type="image/avif">
+										<source srcset="img/index/services/services-image-1-mob.webp" type="image/webp">
+										<img src="img/index/services/services-image-1.jpg" alt="" width="320" height="235" loading="lazy">
+									</picture>
+								</div>
+								<div class="services__slide--content">
+									<h3 class="services__slide--name">
+										Private Tours
+									</h3>
+									<div class="services__slide--text">
+										<div>
+											<p>
+												Embark on a bespoke adventure, uniquely tailored to your preferences and desires, where every detail is designed to match your dreams.
+											</p>
+										</div>
+									</div>
+								</div>
+								<a href="#" class="services__slide--btn btn _transparent">
+									Learn more
+								</a>
+							</li>
+							<li class="services__slider--slide services__slide splide__slide">
+								<div class="services__slide--label">
+									New Autumn’23 destinations
+								</div>
+								<div class="services__slide--image image-aspect-ratio">
+									<picture>
+										<source srcset="img/index/services/services-image-2.avif" media="(min-width: 992px)" type="image/avif">
+										<source srcset="img/index/services/services-image-2.webp" media="(min-width: 992px)" type="image/webp">
+										<source srcset="img/index/services/services-image-2-mob.avif" type="image/avif">
+										<source srcset="img/index/services/services-image-2-mob.webp" type="image/webp">
+										<img src="img/index/services/services-image-2.jpg" alt="" width="320" height="235" loading="lazy">
+									</picture>
+								</div>
+								<div class="services__slide--content">
+									<h3 class="services__slide--name">
+										Custom Group Tours
+									</h3>
+									<div class="services__slide--text">
+										<div>
+											<p>
+												Unite with fellow connoisseurs of luxury as you traverse captivating destinations, fostering camaraderie and friendship, ensuring every moment is truly special.
+											</p>
+										</div>
+									</div>
+								</div>
+								<a href="#" class="services__slide--btn btn _transparent">
+									Learn more
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="services__slider--progress slider-progress visible-on-mob">
+						<div class="services__slider--progress-bar slider-progress__bar"></div>
+					</div>
+				</div>
+				<ul class="services__list">
+					@@loop("html/_services-card.html", [
+						{
+							"title": 'Most Wanted Offers',
+							"text": 'Indulge in iconic experiences and luxurious getaways, curated to provide you with unforgettable memories that last a lifetime.',
+							"image": '1',
+						},
+						{
+							"title": 'Concierge Services',
+							"text": 'Elevate your travel with our comprehensive concierge services, providing seamless assistance for a stress-free and delightful journey.',
+							"image": '2',
+						},
+						{
+							"title": 'Private Jets',
+							"text": 'Soar to new heights with our private jet services, ensuring swift and luxurious travel for the ultimate experience.',
+							"image": '3',
+						},
+						{
+							"title": 'Hotels & Villas',
+							"text": "Experience opulence and comfort with our handpicked selection of the world's most exclusive and lavish hotels, offering you an unparalleled stay.",
+							"image": '4',
+						},
+						{
+							"title": 'Global Lifestyle',
+							"text": 'Discover the allure of "Global Lifestyle" with our services that seamlessly combine luxurious living, captivating experiences, and personalized adventures, making every moment extraordinary.',
+							"image": '5',
+						},
+						{
+							"title": 'Investment Real Estate',
+							"text": 'Explore lucrative real estate opportunities, carefully connected to our "Global Lifestyle" services, for those seeking a new home or investment abroad.',
+							"image": '6',
+						},
+					])
 				</ul>
 			</div>
 		</section>
-		<section class="team container">
-			<h2 class="team__title">
-				Team
+		<section class="subscribe container">
+			<h2 class="subscribe__title title">
+				Subscribe
 			</h2>
-			<div class="team__slider splide" data-aos="fade-in" data-aos-delay="200">
-				<div class="team__slider--track splide__track">
-					<ul class="team__slider--list splide__list">
-						@@loop("html/_team-slide.html", [
-						{
-							"avatar_add": "3",
-							"avatar_main": "4",
-							"name": "Anastasia",
-							"profession": "Co-owner",
-							"text": "My name is Anastasia. One of my dreams were to become a president one day. And actually my dream has come true- I’m the president of the best travel&pleasure company- Clavis. My journey in the travel business began a long time ago, but it took me a long way through all the trials and tribulations, MBA and corporations, to finally understand that I’m getting pure joy only by managing company that is making happy so many amazing people all over the world!",
-						},
-						{
-							"avatar_add": "5",
-							"avatar_main": "6",
-							"name": "Anastasia",
-							"profession": "Co-owner",
-							"text": "My name is Anastasia. One of my dreams were to become a president one day. And actually my dream has come true- I’m the president of the best travel&pleasure company- Clavis. My journey in the travel business began a long time ago, but it took me a long way through all the trials and tribulations, MBA and corporations, to finally understand that I’m getting pure joy only by managing company that is making happy so many amazing people all over the world!",
-						},
-						{
-							"avatar_add": "4",
-							"avatar_main": "5",
-							"name": "Anastasia",
-							"profession": "Co-owner",
-							"text": "My name is Anastasia. One of my dreams were to become a president one day. And actually my dream has come true- I’m the president of the best travel&pleasure company- Clavis. My journey in the travel business began a long time ago, but it took me a long way through all the trials and tribulations, MBA and corporations, to finally understand that I’m getting pure joy only by managing company that is making happy so many amazing people all over the world!",
-						},
-						{
-							"avatar_add": "1",
-							"avatar_main": "2",
-							"name": "Anastasia",
-							"profession": "Co-owner",
-							"text": "My name is Anastasia. One of my dreams were to become a president one day. And actually my dream has come true- I’m the president of the best travel&pleasure company- Clavis. My journey in the travel business began a long time ago, but it took me a long way through all the trials and tribulations, MBA and corporations, to finally understand that I’m getting pure joy only by managing company that is making happy so many amazing people all over the world!",
-						},
-						{
-							"avatar_add": "1",
-							"avatar_main": "2",
-							"name": "Anastasia",
-							"profession": "Co-owner",
-							"text": "My name is Anastasia. One of my dreams were to become a president one day. And actually my dream has come true- I’m the president of the best travel&pleasure company- Clavis. My journey in the travel business began a long time ago, but it took me a long way through all the trials and tribulations, MBA and corporations, to finally understand that I’m getting pure joy only by managing company that is making happy so many amazing people all over the world!",
-						},
-						])
-					</ul>
+			<form method="post" class="subscribe__form">
+				<div class="subscribe__col">
+					<label class="subscribe__label">
+						<input type="text" name="firstname" placeholder="Name*" class="subscribe__input">
+					</label>
+					<label class="subscribe__label">
+						<input type="text" name="surname" placeholder="Surname*" required class="subscribe__input">
+					</label>
 				</div>
-				<div class="team__slider-progress">
-					<div class="team__slider-progress--bar"></div>
+				<div class="subscribe__col">
+					<label class="subscribe__label">
+						<input type="email" name="email" placeholder="Email*" class="subscribe__input">
+					</label>
+					<label class="subscribe__label">
+						<input type="tel" name="tel" placeholder="Phone number" class="subscribe__input">
+					</label>
 				</div>
+				<label class="subscribe__label">
+					<input type="text" name="message" placeholder="Let us know how we may help you..." class="subscribe__input">
+				</label>
+				<label class="subscribe__checkbox">
+					<input type="checkbox" name="subscribe" checked class="subscribe__checkbox--input visually-hidden">
+					<span class="subscribe__checkbox--element"></span>
+					<span class="subscribe__checkbox--text">I would like to subscribe to get the best offers</span>
+				</label>
+				<button class="subscribe__submit btn _transparent" type="submit">
+					Subscribe
+				</button>
+			</form>
+		</section>
+		<section class="follow-us">
+			<ul class="follow-us__gallery">
+				@@loop("html/_follow-us-gallery-item.html", [
+					{
+						"image": '1',
+					},
+					{
+						"image": '2',
+					},
+					{
+						"image": '3',	
+					},
+					{
+						"image": '4',
+					},
+					{
+						"image": '5',
+					},
+					{
+						"image": '6',
+					},
+					{
+						"image": '7',
+					},
+					{
+						"image": '8',
+					},
+					{
+						"image": '9',
+					},
+					{
+						"image": '10',
+					},
+					{
+						"image": '11',
+					},
+					{
+						"image": '12',
+					},
+					{
+						"image": '13',
+					},
+					{
+						"image": '14',
+					},
+				])
+			</ul>
+			<div class="follow-us__content">
+				<h2 class="follow-us__title title">
+					Follow Us
+				</h2>
+				<a href="#" class="follow-us__link">
+					<svg width="15" height="15" viewBox="0 0 15 15">
+						<use xlink:href="img/sprites.svg#instagram"></use>
+					</svg>
+					2Clavis
+				</a>
 			</div>
-			<b class="team__slogan" data-aos="fade-in" data-aos-delay="200">
-				We <mark>love</mark> people and what we do. 
-				Anything, anytime, <mark>anywhere</mark>.
-			</b>
 		</section>
 	</main>
 

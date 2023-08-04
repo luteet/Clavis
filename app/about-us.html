@@ -1,0 +1,106 @@
+@@include("html/_header.html")
+
+	<main class="main">
+		<section class="about-us-hero container">
+			<h1 class="about-us-hero__title main-title">
+				About us
+			</h1>
+			<div class="about-us-hero__text">
+				Business and travel professionals have teamed up to create a new style of travel. Such a company, whose services are used by the founders themselves, which meets all our standards.
+			</div>
+			<div class="about-us-hero__image">
+				<div class="about-us-hero__image--wrapper image-aspect-ratio">
+					<picture>
+						<source srcset="img/about-us/hero/hero-image.avif" type="image/avif">
+						<source srcset="img/about-us/hero/hero-image.webp" type="image/webp">
+						<img src="img/about-us/hero/hero-image.jpg" alt="" width="660" height="440" loading="lazy">
+					</picture>
+				</div>
+			</div>
+			<a href="#" class="about-us-hero__btn btn _transparent-on-mob">
+				Enquire
+			</a>
+		</section>
+		<section class="we container">
+			<div class="we__body">
+				<h2 class="we__title">we</h2>
+				<ul class="we__list">
+					<li>
+						are always in touch
+					</li>
+					<li>
+						think about the details
+					</li>
+					<li>
+						are coming up with ideas for your new dreams
+					</li>
+					<li>
+						appreciate your time
+					</li>
+					<li>
+						manage your budget
+					</li>
+					<li>
+						make your dreams come true
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="team container">
+			<h2 class="team__title">
+				Team
+			</h2>
+			<div class="team__slider splide" data-aos="fade-in" data-aos-delay="200">
+				<div class="team__slider--track splide__track">
+					<ul class="team__slider--list splide__list">
+						@@loop("html/_team-slide.html", [
+						{
+							"avatar_add": "3",
+							"avatar_main": "4",
+							"name": "Anastasia",
+							"profession": "Co-owner",
+							"text": "My name is Anastasia. One of my dreams were to become a president one day. And actually my dream has come true- I’m the president of the best travel&pleasure company- Clavis. My journey in the travel business began a long time ago, but it took me a long way through all the trials and tribulations, MBA and corporations, to finally understand that I’m getting pure joy only by managing company that is making happy so many amazing people all over the world!",
+						},
+						{
+							"avatar_add": "5",
+							"avatar_main": "6",
+							"name": "Anastasia",
+							"profession": "Co-owner",
+							"text": "My name is Anastasia. One of my dreams were to become a president one day. And actually my dream has come true- I’m the president of the best travel&pleasure company- Clavis. My journey in the travel business began a long time ago, but it took me a long way through all the trials and tribulations, MBA and corporations, to finally understand that I’m getting pure joy only by managing company that is making happy so many amazing people all over the world!",
+						},
+						{
+							"avatar_add": "4",
+							"avatar_main": "5",
+							"name": "Anastasia",
+							"profession": "Co-owner",
+							"text": "My name is Anastasia. One of my dreams were to become a president one day. And actually my dream has come true- I’m the president of the best travel&pleasure company- Clavis. My journey in the travel business began a long time ago, but it took me a long way through all the trials and tribulations, MBA and corporations, to finally understand that I’m getting pure joy only by managing company that is making happy so many amazing people all over the world!",
+						},
+						{
+							"avatar_add": "1",
+							"avatar_main": "2",
+							"name": "Anastasia",
+							"profession": "Co-owner",
+							"text": "My name is Anastasia. One of my dreams were to become a president one day. And actually my dream has come true- I’m the president of the best travel&pleasure company- Clavis. My journey in the travel business began a long time ago, but it took me a long way through all the trials and tribulations, MBA and corporations, to finally understand that I’m getting pure joy only by managing company that is making happy so many amazing people all over the world!",
+						},
+						{
+							"avatar_add": "1",
+							"avatar_main": "2",
+							"name": "Anastasia",
+							"profession": "Co-owner",
+							"text": "My name is Anastasia. One of my dreams were to become a president one day. And actually my dream has come true- I’m the president of the best travel&pleasure company- Clavis. My journey in the travel business began a long time ago, but it took me a long way through all the trials and tribulations, MBA and corporations, to finally understand that I’m getting pure joy only by managing company that is making happy so many amazing people all over the world!",
+						},
+						])
+					</ul>
+				</div>
+				<div class="team__slider-progress slider-progress">
+					<div class="team__slider-progress--bar slider-progress__bar"></div>
+				</div>
+			</div>
+			<b class="team__slogan" data-aos="fade-in" data-aos-delay="200">
+				We <mark>love</mark> people and what we do. 
+				Anything, anytime, <mark>anywhere</mark>.
+			</b>
+		</section>
+	</main>
+
+@@include("html/_footer.html")

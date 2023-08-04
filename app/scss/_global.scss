@@ -12,6 +12,7 @@
 	--black: #000;
 	--dark: #27272C;
 	--light-gray: #D7DADD;
+	--dark-gray: #707079;
 
 	--desktop-container-padding: 60px;
 	--container-padding: 20px;
@@ -76,6 +77,10 @@ section {
 
 	flex: 1 0 auto;
 	position: relative;
+
+	&._footer-margin-none + .footer {
+		margin-top: 0;
+	}
 }
 
 .container {
@@ -87,9 +92,14 @@ section {
 		padding-right: var(--desktop-container-padding);
 	}
 	
-	@media (min-width: #{$container}px) {
+	@media (min-width: #{$containerMin}px) {
 		padding-left: max(var(--desktop-container-padding), calc(50% - #{math.div($container, 2)}px));
 		padding-right: max(var(--desktop-container-padding), calc(50% - #{math.div($container, 2)}px));
+
+		&._min {
+			padding-left: max(var(--desktop-container-padding), calc(50% - #{math.div($containerMin, 2)}px));
+			padding-right: max(var(--desktop-container-padding), calc(50% - #{math.div($containerMin, 2)}px));
+		}
 	}
 }
 
@@ -102,6 +112,46 @@ section {
 
 	background: var(--accent);
 	color: var(--dark);
+	&._transparent {
+		padding: 11px 27px;
+		background: transparent;
+		border: 1px solid var(--white);
+		color: var(--white);
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--dark);
+				background: var(--accent-hover);
+				border-color: var(--accent-hover);
+			}
+			
+			&:active {
+				background: var(--accent-active);
+				border-color: var(--accent-active);
+			}
+		}
+	}
+
+	&._transparent-2 {
+		padding: 11px 27px;
+		background: transparent;
+		border: 1px solid var(--dark-gray);
+		color: var(--dark-gray);
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--dark);
+				background: var(--accent-hover);
+				border-color: var(--accent-hover);
+			}
+			
+			&:active {
+				background: var(--accent-active);
+				border-color: var(--accent-active);
+			}
+		}
+	}
+
 	&._transparent-on-mob {
 		background: transparent;
 		border: 1px solid var(--white);
@@ -119,7 +169,7 @@ section {
 
 	border-radius: 100px;
 
-	transition: background .3s ease;
+	transition: background .3s ease, color .3s ease, border-color .3s ease;
 
 	@media (any-hover: hover) {
 		&:hover {
@@ -152,5 +202,15 @@ section {
 .visible-on-mob {
 	@include _992 {
 		display: none !important;
+	}
+}
+
+.slider-progress {	
+
+	&__bar {
+		background: var(--dark);
+		height: 2px;
+		transition: width 400ms ease;
+		width: 0;
 	}
 }

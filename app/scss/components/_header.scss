@@ -1,5 +1,5 @@
 .header {
-	position: relative;
+	position: absolute;
 	left: 0; top: 0;
 	width: 100%;
 
@@ -27,7 +27,7 @@
 	}
 
 	background: rgba(39, 39, 44, 0.90);
-
+	min-width: 320px;
 	
 
 	// .header__sub-panel
@@ -74,7 +74,7 @@
 		left: 0; top: 0;
 		width: max(100%, 320px); height: var(--height-screen, calc(var(--svh,1vh)*100));
 
-		background: rgba(39, 39, 44, 0.90);
+		background: var(--dark);
 
 		opacity: 0; visibility: hidden;
 
@@ -96,7 +96,6 @@
 			flex: 1 1 auto;
 
 			opacity: 1; visibility: visible;
-			
 		}
 
 		// .header__nav--body
@@ -105,23 +104,21 @@
 			position: relative;
 			margin: var(--height-header) 0;
 			height: calc(var(--svh,1vh)*100 - var(--height-header) * 2);
-			/* &::before {
-				content: '';
-				position: fixed;
-				left: 0; top: 0;
-				width: 100%; height: var(--height-header);
-				background: var(--white);
-				z-index: 2;
-			} */
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 
 			overflow-y: auto; overflow-x: hidden;
 
 			@include _992 {
+
 				margin: 0;
 				overflow-y: visible; overflow-x: visible;
 				height: auto;
 				display: flex;
 				align-items: center;
+				flex-direction: row;
 				&::before {
 					display: none;
 				}
@@ -186,10 +183,8 @@
 				overflow: visible;
 			}
 
-
 			width: 100%;
 			height: 0; overflow: hidden;
-
 			
 			@include _container {
 				padding-left: 50px;
@@ -202,11 +197,8 @@
 			}
 
 			display: grid;
-			grid-template-columns: auto auto;
 
 			padding-left: 0;
-
-			
 
 			> li {
 				@include _992 {
@@ -218,13 +210,11 @@
 				display: block;
 				@include _992 {
 					text-align: left;
+					padding: 10px 5px 10px 0;
 				}
-				font-size: 0.875rem;
-				@include _container {
-					font-size: 1rem;
-				}
+				font-size: 0.75rem;
 
-				padding: 10px 5px 10px 0;
+				padding: 5px 0;
 			}
 		}
 
@@ -249,13 +239,16 @@
 			width: 100%;
 
 			display: block;
-			padding: 10px 15px;
+			padding: 15px 15px;
+
+			text-transform: uppercase;
 
 			border-bottom: 1px solid transparent;
 
 			@include _992 {
 				width: auto;
 				padding: 30px 15px;
+				text-transform: none;
 			}
 
 			@include _container {
@@ -267,7 +260,15 @@
 		&--contacts {
 			
 			display: block;
-			padding: 10px 50px;
+			padding: 10px 20px;
+			text-transform: uppercase;
+			@include _992 {
+				padding: 30px 20px;
+				text-transform: none;
+			}
+			@include _container {
+				padding: 30px 50px;
+			}
 
 			color: #D7DADD;
 			text-align: center;
@@ -314,6 +315,7 @@
 			text-align: center;
 			font-weight: 400;
 			line-height: normal;
+			font-size: 0.875rem;
 
 			&[href*="mailto"] {
 				text-decoration: underline;
@@ -329,8 +331,12 @@
 		}
 
 		> ul > li:not(:first-child) {
-			margin-top: 21px;
+			margin-top: 11px;
+			@include _992 {
+				margin-top: 21px;
+			}
 		}
+
 	}
 
 	&._sub-active &__contacts {
@@ -343,13 +349,16 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		padding-top: 15px;
 		@include _992 {
 			justify-content: stretch;
+			padding-top: 0;
 		}
 
 		margin: -10px;
 
 		a {
+			
 			display: block;
 			fill: #D7DADD;
 			padding: 10px;
@@ -377,6 +386,7 @@
 			margin-right: 30px;
 			padding: 5px 10px;
 		}
+		font-size: 0.75rem;
 		padding: 15px 10px;
 		fill: #BABCC0;
 		&:hover {
@@ -460,6 +470,13 @@
 				transform: translate3d(0, -50%, 0) rotate(-45deg);
 			}
 	
+		}
+	}
+
+	&__btn {
+		margin-top: 30px;
+		@include _992 {
+			margin-top: 0px;
 		}
 	}
 }

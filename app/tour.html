@@ -1,0 +1,328 @@
+@@include("html/_header.html")
+
+	<main class="main">
+		<section class="tour-hero">
+			<div class="tour-hero__body">
+				<div class="tour-hero__background" style="background-image: url(img/tour/hero/tour-hero-image.webp);">
+					<!-- <picture>
+						<source srcset="img/tour/hero/tour-hero-image.avif" type="image/avif">
+						<source srcset="img/tour/hero/tour-hero-image.webp" type="image/webp">
+						<img src="img/tour/hero/tour-hero-image.jpg" alt="" width="0" height="0" loading="lazy">
+					</picture> -->
+				</div>
+				<div class="tour-hero__content container">
+					<b class="tour-hero__date">
+						October 18–25
+					</b>
+					<h1 class="tour-hero__title large-title">
+						South Africa
+					</h1>
+					<h2 class="tour-hero__subtitle">
+						The Garden Route
+					</h2>
+					<div class="tour-hero__footer">
+						<a href="#" class="tour-hero__btn btn">Talk to your travel advisor</a>
+						<a href="#" class="tour-hero__btn btn _transparent">Download Full Itinerary PDF</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="about-tour">
+			<div class="about-tour__info container" data-aos="fade-in">
+				<ul>
+					<li>
+						<h3>Spots left:</h3>
+						<b>3</b> / 12
+					</li>
+					<li>
+						<h3>Age:</h3>
+						<b>6+</b><br>
+						Kids are welcome
+					</li>
+				</ul>
+			</div>
+			<div class="about-tour__container container">
+				<div class="about-tour__content" data-aos="fade-in">
+					<h2 class="about-tour__title title">
+						South Africa, The Garden Route
+					</h2>
+					<div class="about-tour__text">
+						<p>Join us on an unforgettable group tour to South Africa's breathtaking The Garden Route in October. This exciting adventure promises to be a captivating blend of natural wonders, cultural experiences, and thrilling activities. From stunning landscapes to diverse wildlife, there's something for everyone to enjoy. Immerse yourself in the vibrant atmosphere, indulge in local delicacies and scenic vineyards, and create lasting memories with fellow travelers. Get ready to embark on an extraordinary journey that will leave you inspired and awestruck.</p>
+					</div>
+					<hr>
+					<div class="about-tour__footer">
+						<b class="about-tour__date">
+							18–25 October 2023
+							<span>8 days / 7 nights</span>
+						</b>
+						<div class="about-tour__price">
+							<span class="about-tour__price--value"><b>Price from:</b> $$$$$$ / per person</span>
+							<div class="about-tour__price--note">
+								Please note that the availability and pricing of these additional services may vary. Kindly reach out to our team for further details and personalized assistance based on your specific requirements.
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="about-tour__map" data-aos="fade-in">
+					<img src="img/tour/tour-map/tour-map.svg" alt="" width="0" height="0" loading="lazy">
+				</div>
+			</div>
+			<div class="about-tour__tab-section container">
+				<ul class="about-tour__tab-nav">
+					<li>
+						<a href="#itinerary" class="active">
+							Itinerary
+						</a>
+					</li>
+					<li>
+						<a href="#highlights">
+							Clavis Highlights and Advantages
+						</a>
+					</li>
+				</ul>
+				<div class="about-tour__tab-wrapper">
+					<div class="about-tour__tab-block _active" id="itinerary">
+						<div class="about-tour__few-images">
+							<h3 class="about-tour__min-title min-title">
+								Your tour in few images:
+							</h3>
+							<ul>
+								<li>
+									<picture class="image-aspect-ratio">
+										<source srcset="img/tour/Itinerary/Itinerary-few-image-1.avif" type="image/avif">
+										<source srcset="img/tour/Itinerary/Itinerary-few-image-1.webp" type="image/webp">
+										<img src="img/tour/Itinerary/Itinerary-few-image-1.jpg" alt="" width="170" height="110" loading="lazy">
+									</picture>
+								</li>
+								<li>
+									<picture class="image-aspect-ratio">
+										<source srcset="img/tour/Itinerary/Itinerary-few-image-2.avif" type="image/avif">
+										<source srcset="img/tour/Itinerary/Itinerary-few-image-2.webp" type="image/webp">
+										<img src="img/tour/Itinerary/Itinerary-few-image-2.jpg" alt="" width="170" height="110" loading="lazy">
+									</picture>
+								</li>
+								<li>
+									<picture class="image-aspect-ratio">
+										<source srcset="img/tour/Itinerary/Itinerary-few-image-3.avif" type="image/avif">
+										<source srcset="img/tour/Itinerary/Itinerary-few-image-3.webp" type="image/webp">
+										<img src="img/tour/Itinerary/Itinerary-few-image-3.jpg" alt="" width="170" height="110" loading="lazy">
+									</picture>
+								</li>
+								<li>
+									<picture class="image-aspect-ratio">
+										<source srcset="img/tour/Itinerary/Itinerary-few-image-4.avif" type="image/avif">
+										<source srcset="img/tour/Itinerary/Itinerary-few-image-4.webp" type="image/webp">
+										<img src="img/tour/Itinerary/Itinerary-few-image-4.jpg" alt="" width="170" height="110" loading="lazy">
+									</picture>
+								</li>
+							</ul>
+							<a href="#">
+								View Gallery of the tour >
+							</a>
+						</div>
+						<div class="about-tour__itinerary">
+							<h3 class="about-tour__itinerary--title min-title">
+								Itinerary:
+							</h3>
+							<ul class="about-tour__itinerary-list">
+								@@loop("html/_itinerary-item.html", [
+									{
+										"title": 'Arrival in Cape Town, check-in at Cellars Hohenort',
+									},
+									{
+										"title": 'Cape Town city tour',
+									},
+									{
+										"title": 'Visit Stellenbosch wineries',
+									},
+									{
+										"title": 'Cape of Good Hope excursion and beach with penguins',
+									},
+									{
+										"title": 'Optional morning hiking, transfer to Hermanus',
+									},
+									{
+										"title": 'Free day in Hermanus',
+									},
+									{
+										"title": 'Transfer to Knysna, evening cruise with oysters and wine',
+									},
+									{
+										"title": 'Transfer to Plettenberg Bay, walk with elephants',
+									},
+									{
+										"title": 'Optional activities: 2-hour safari or bungee jumping',
+									},
+									{
+										"title": 'Departure from Plettenberg Bay',
+									},
+								])
+							</ul>
+							<div class="about-tour__itinerary-footer">
+								<a href="#" class="about-tour__itinerary-footer--btn btn">
+									Get the price
+								</a>
+								<a href="#" class="about-tour__itinerary-footer--btn btn _transparent-2">
+									Download Full Itinerary PDF
+								</a>
+							</div>
+						</div>
+						<div class="about-tour__hotels">
+							<h3 class="about-tour__hotels--title min-title">
+								Hotels on the route:
+							</h3>
+							<ul class="about-tour__hotels-list">
+								@@loop("html/_hotels-item.html", [
+									{
+										"image": '1',
+										"title": "The Cellars-Hohenort",
+										"place": "Constantia Heights, Cape Town, South Africa",
+									},
+									{
+										"image": '2',
+										"title": "The Marine Hermanus",
+										"place": "Hermanus, South Africa",
+									},
+									{
+										"image": '3',
+										"title": "Pezula Nature Hotel & SPA",
+										"place": "Sparrebosch, Knysna, South Africa",
+									},
+									{
+										"image": '4',
+										"title": "The Plettenberg",
+										"place": "Plettenberg Bay, South Africa",
+									},
+								])
+							</ul>
+						</div>
+					</div>
+					<div class="about-tour__tab-block" id="highlights">
+						<div class="about-tour__highlights">
+							<h3 class="about-tour__highlights--title min-title">
+								Tour highlights:
+							</h3>
+							<ul class="about-tour__highlights-grid">
+								@@loop("html/_highlights-card.html", [
+									{
+										"background": '1',
+										"title": "Wildlife Encounters",
+										"text": "Experience the incredible biodiversity of South Africa through exhilarating wildlife encounters. Embark on thrilling safari expeditions and have the opportunity to spot the famous Big Five – lions, elephants, buffalos, leopards, and rhinoceroses.",
+									},
+									{
+										"background": '2',
+										"title": "Scenic Landscapes",
+										"text": "Explore the picturesque Garden Route region, known for its lush greenery, rolling hills, and stunning vineyards. Marvel at the breathtaking beauty of the surroundings and capture unforgettable moments amidst nature's wonders.",
+									},
+									{
+										"background": '3',
+										"title": "Gastronomic Delights",
+										"text": "Indulge in the delectable flavors of South African cuisine. Sample an array of local dishes, including braai (barbecue), biltong (dried cured meat), and bobotie (spiced minced meat baked with an egg-based topping). Explore the region's renowned wineries and savor exquisite wines produced in the fertile vineyards.",
+									},
+									{
+										"background": '4',
+										"title": "Adventure Activities",
+										"text": "Get your adrenaline pumping with a range of adventure activities. From hiking through scenic trails to adrenaline-fueled wildlife safaris, there's no shortage of thrilling experiences for the adventurous souls.",
+									},
+									{
+										"background": '5',
+										"title": "Cultural Immersion",
+										"text": "Immerse yourself in the vibrant local culture and traditions. Engage with friendly locals, visit traditional villages, and witness traditional dances and music performances. Gain insight into the rich heritage and history of the region.",
+									},
+									{
+										"background": '6',
+										"title": "Group Dynamics",
+										"text": "Forge new friendships and create lasting bonds with fellow travelers. Share unforgettable moments, laughter, and experiences with like-minded individuals who share your passion for exploration and adventure.",
+									},
+								])
+							</ul>
+							<div class="about-tour__highlights-footer">
+								<a href="#" class="about-tour__highlights-footer--btn btn">
+									Get the price
+								</a>
+								<a href="#" class="about-tour__highlights-footer--btn btn _transparent-2">
+									Download Full Itinerary PDF
+								</a>
+							</div>
+						</div>
+						<div class="about-tour__aside">
+							<ul class="about-tour__base-info">
+								<li>
+									<b>Meeting Point:</b>
+									Cape Town Airport
+								</li>
+								<li>
+									<b>Tour Ends at:</b>
+									Plettenberg Bay Airport
+								</li>
+								<li>
+									<b>Visa Requirement:</b>
+									US citizens can stay visa-free for up to 90 days. Please check visa requirements for other nationalities.
+								</li>
+								<li>
+									<b>Personalized Service:</b>
+									After submitting your application, your dedicated Clavis manager will contact you, providing an agreement, document checklist, travel information, and addressing any queries.
+								</li>
+							</ul>
+							<div class="about-tour__accordion-wrapper">
+								<div class="about-tour__accordion">
+									<button class="about-tour__accordion--target" type="button">
+										Inclusions
+										<svg width="13" height="8" viewBox="0 0 13 8">
+											<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+										</svg>
+									</button>
+									<div class="about-tour__accordion--content">
+										<div>
+											<ul>
+												<li>Accommodation in 5* hotels (double rooms, single with surcharge)</li>
+												<li>Daily breakfasts at hotels</li>
+												<li>2 wine tastings</li>
+												<li>Transfers as per itinerary</li>
+												<li>Airport transfers</li>
+												<li>Visit to the beach with penguins</li>
+												<li>Sunset cruise in Knysna</li>
+												<li>Elephant walk experience</li>
+												<li>Support and translation throughout the tour</li>
+											</ul>
+											<div class="about-tour__accordion--note">
+												Please note that the above list highlights the key inclusions in the tour cost. For a detailed itinerary and any additional inclusions, kindly refer to the tour documentation or reach out to our team for further clarification.
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="about-tour__accordion">
+									<button class="about-tour__accordion--target" type="button">
+										Exclusions
+										<svg width="13" height="8" viewBox="0 0 13 8">
+											<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+										</svg>
+									</button>
+									<div class="about-tour__accordion--content">
+										<div>
+											<ul>
+												<li>Accommodation in 5* hotels (double rooms, single with surcharge)</li>
+												<li>Daily breakfasts at hotels</li>
+												<li>2 wine tastings</li>
+												<li>Transfers as per itinerary</li>
+												<li>Airport transfers</li>
+												<li>Visit to the beach with penguins</li>
+												<li>Sunset cruise in Knysna</li>
+												<li>Elephant walk experience</li>
+												<li>Support and translation throughout the tour</li>
+											</ul>
+											<div class="about-tour__accordion--note">
+												Please note that the above list highlights the key inclusions in the tour cost. For a detailed itinerary and any additional inclusions, kindly refer to the tour documentation or reach out to our team for further clarification.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+@@include("html/_footer.html")

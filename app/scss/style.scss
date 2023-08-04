@@ -10,7 +10,19 @@
 @import 'components/header';
 
 @import 'pages/index/hero';
-@import 'pages/index/we';
-@import 'pages/index/team';
+@import 'pages/index/about-us';
+@import 'pages/index/services';
+@import 'pages/index/subscribe';
+@import 'pages/index/follow-us';
+
+@import 'pages/about-us/hero';
+@import 'pages/about-us/we';
+@import 'pages/about-us/team';
+
+@import 'pages/tour/hero';
+@import 'pages/tour/about-tour';
+
+@import 'pages/contacts/main';
 
 @import 'components/footer';
+

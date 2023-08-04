@@ -32,21 +32,67 @@
 	}
 }
 
-.title {
-	
+.large-title {
+	color: #FFF;
 	font-family: var(--title-font);
-	font-weight: 700;
+	font-size: 3rem;
+	font-weight: 400;
+	line-height: 125%;
 
-	font-size: 1.125rem;
+	@include _550 {
+		font-size: 4rem;
+	}
+	
+	@include _768 {
+		font-size: 5rem;
+	}
+	
+	@include _992 {
+		font-size: 6rem;
+	}
+}
 
+.min-title {
+	font-size: 1.5rem;
+	@include _550 {
+		font-size: 1.5rem;
+	}
+	
 	@include _768 {
 		font-size: 1.5rem;
 	}
-
+	
 	@include _992 {
-		font-size: 1.875rem;
+		font-size: 1.5rem;
+	}
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: 0.075rem;
+}
+
+.title {
+	
+	font-family: var(--title-font);
+	font-size: 2.25rem;
+	font-weight: 400;
+	line-height: 125%;
+
+	@include _550 {
+		font-size: 2.5rem;
+	}
+	
+	@include _768 {
+		font-size: 2.75rem;
+	}
+	
+	@include _992 {
+		font-size: 3rem;
 	}
 
+	mark {
+		background: transparent;
+		color: var(--accent);
+	}
 }
 
 .section-title {
