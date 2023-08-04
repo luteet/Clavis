@@ -472,7 +472,50 @@ if(document.querySelector('.services__slider')) {
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
+const contactsMap = document.querySelector('.contacts__map--image svg')
+if(contactsMap) {
+	const countries = contactsMap.querySelectorAll('path.country'),
+	countriesPoints = contactsMap.querySelectorAll('path.country-point');
+	
+	countriesPoints.forEach(countriesPoint => {
+		countriesPoint.addEventListener('pointerenter', function () {
+			const points = document.querySelectorAll(`.contacts__map--point[data-id="${countriesPoint.dataset.id}"]`),
+			country = document.querySelector(`.country[data-id="${countriesPoint.dataset.id}"]`);
+			
+			points.forEach(point => {
+				point.classList.add('_visible');
+			})
 
+			country.classList.add('_hover');
+		})
+		countriesPoint.addEventListener('pointerleave', function () {
+			const points = document.querySelectorAll(`.contacts__map--point[data-id="${countriesPoint.dataset.id}"]`),
+			country = document.querySelector(`.country[data-id="${countriesPoint.dataset.id}"]`);
+			
+			points.forEach(point => {
+				point.classList.remove('_visible');
+			})
+
+			country.classList.remove('_hover');
+		})
+	})
+
+	countries.forEach(country => {
+		country.addEventListener('pointerenter', function () {
+			const points = document.querySelectorAll(`.contacts__map--point[data-id="${country.dataset.id}"]`);
+			points.forEach(point => {
+				point.classList.add('_visible');
+			})
+		})
+		country.addEventListener('pointerleave', function () {
+			const points = document.querySelectorAll(`.contacts__map--point[data-id="${country.dataset.id}"]`);
+			points.forEach(point => {
+				point.classList.remove('_visible');
+			})
+		})
+	})
+	
+}
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <animation> -=-=-=-=-=-=-=-=-=-=-=-=
 

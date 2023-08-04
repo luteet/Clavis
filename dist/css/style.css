@@ -6,6 +6,10 @@ progress,sub,sup {
     vertical-align: baseline
 }
 
+[type=checkbox],[type=radio],legend {
+    padding: 0
+}
+
 .splide,.splide__container,.splide__slide,sub,sup {
     position: relative
 }
@@ -95,16 +99,11 @@ legend {
     color: inherit;
     display: table;
     max-width: 100%;
-    padding: 0;
     white-space: normal
 }
 
 textarea {
     overflow: auto
-}
-
-[type=checkbox],[type=radio] {
-    padding: 0
 }
 
 [type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button {
@@ -123,6 +122,10 @@ textarea {
 ::-webkit-file-upload-button {
     -webkit-appearance: button;
     font: inherit
+}
+
+.we__title,address {
+    font-style: normal
 }
 
 summary {
@@ -1492,10 +1495,6 @@ button {
     cursor: pointer
 }
 
-address {
-    font-style: normal
-}
-
 button::-moz-focus-inner {
     padding: 0;
     border: 0
@@ -1503,6 +1502,10 @@ button::-moz-focus-inner {
 
 a,a:hover,a:visited {
     text-decoration: none
+}
+
+.header__contacts ul:not(.header__social) a[href*=mailto],.header__nav--list>li.hover>a {
+    text-decoration: underline
 }
 
 ul li {
@@ -1618,12 +1621,12 @@ section {
     transition: background .3s ease,color .3s ease,border-color .3s ease
 }
 
-.btn._transparent,.btn._transparent-2,.btn._transparent-on-mob,.header__burger,.title mark {
+.btn._transparent,.btn._transparent-2 {
+    padding: 11px 27px;
     background: rgba(0,0,0,0)
 }
 
 .btn._transparent {
-    padding: 11px 27px;
     border: 1px solid var(--white);
     color: var(--white)
 }
@@ -1633,18 +1636,19 @@ section {
 }
 
 .btn._transparent-2 {
-    padding: 11px 27px;
     border: 1px solid var(--dark-gray)
 }
 
 .btn._transparent-on-mob {
+    background: rgba(0,0,0,0);
     border: 1px solid var(--white);
     color: var(--white)
 }
 
 .large-title,.main-title {
     color: #fff;
-    line-height: 125%
+    line-height: 125%;
+    font-weight: 400
 }
 
 .visually-hidden {
@@ -1686,24 +1690,19 @@ section {
 
 .main-title {
     font-family: var(--title-font);
-    font-weight: 400;
     font-size: 2.25rem
 }
 
 .large-title {
     font-family: var(--title-font);
-    font-size: 3rem;
-    font-weight: 400
+    font-size: 3rem
 }
 
-.hero__text,.min-title {
+.min-title {
     font-size: 1.5rem;
-    letter-spacing: .075rem
-}
-
-.header__contacts ul:not(.header__social) a,.header__nav--contacts,.header__nav--list a,.hero__text,.min-title {
+    font-weight: 400;
     line-height: normal;
-    font-weight: 400
+    letter-spacing: .075rem
 }
 
 .title {
@@ -1713,15 +1712,19 @@ section {
     line-height: 125%
 }
 
+.header__contacts ul:not(.header__social) a,.header__nav--contacts,.header__nav--list a,.hero__text {
+    line-height: normal;
+    text-align: center
+}
+
 .title mark {
+    background: rgba(0,0,0,0);
     color: var(--accent)
 }
 
 .header,.header__sub-panel {
     position: absolute;
-    background: rgba(39,39,44,.9);
-    width: 100%;
-    left: 0
+    background: rgba(39,39,44,.9)
 }
 
 .section-title {
@@ -1773,7 +1776,9 @@ input:focus::placeholder,textarea:focus::placeholder {
 }
 
 .header {
+    left: 0;
     top: 0;
+    width: 100%;
     z-index: 3;
     display: flex;
     justify-content: space-between;
@@ -1785,7 +1790,9 @@ input:focus::placeholder,textarea:focus::placeholder {
 }
 
 .header__sub-panel {
+    left: 0;
     top: 100%;
+    width: 100%;
     height: calc(120% + max(var(--height-nav-sub,0px),var(--height-contacts,0px)));
     opacity: 0;
     visibility: hidden;
@@ -1820,8 +1827,8 @@ input:focus::placeholder,textarea:focus::placeholder {
 }
 
 .header._sub-active .header__contacts,.header__burger span:nth-child(2),.header__nav--list>li.hover>ul,.header__nav._mob-menu-active {
-    visibility: visible;
-    opacity: 1
+    opacity: 1;
+    visibility: visible
 }
 
 .header__nav--body {
@@ -1833,6 +1840,10 @@ input:focus::placeholder,textarea:focus::placeholder {
     align-items: center;
     overflow-y: auto;
     overflow-x: hidden
+}
+
+.about-tour__accordion--content>*,.about-tour__highlights-card--text>*,.about-tour__itinerary-item--content,.about-tour__map,.header__nav--list>li>ul,.team__slider,.we {
+    overflow: hidden
 }
 
 .header__nav--list {
@@ -1848,14 +1859,9 @@ input:focus::placeholder,textarea:focus::placeholder {
     text-align: center
 }
 
-.header__nav--list>li.hover>a {
-    text-decoration: underline
-}
-
 .header__nav--list>li>ul {
     width: 100%;
     height: 0;
-    overflow: hidden;
     display: grid;
     padding-left: 0
 }
@@ -1868,7 +1874,7 @@ input:focus::placeholder,textarea:focus::placeholder {
 
 .header__nav--list a {
     color: #d7dadd;
-    text-align: center;
+    font-weight: 400;
     transition: color .1s ease,border-color .2s ease
 }
 
@@ -1893,7 +1899,7 @@ input:focus::placeholder,textarea:focus::placeholder {
     padding: 10px 20px;
     text-transform: uppercase;
     color: #d7dadd;
-    text-align: center
+    font-weight: 400
 }
 
 .header__nav--contacts:hover {
@@ -1916,12 +1922,8 @@ input:focus::placeholder,textarea:focus::placeholder {
 .header__contacts ul:not(.header__social) a {
     display: block;
     color: #d7dadd;
-    text-align: center;
+    font-weight: 400;
     font-size: .875rem
-}
-
-.header__contacts ul:not(.header__social) a[href*=mailto] {
-    text-decoration: underline
 }
 
 .header__contacts ul:not(.header__social) a:hover {
@@ -1930,11 +1932,6 @@ input:focus::placeholder,textarea:focus::placeholder {
 
 .header__contacts ul:not(.header__social) a:active {
     color: var(--accent-active)
-}
-
-.about-us__text,.about-us__title,.hero__text {
-    color: var(--white);
-    text-align: center
 }
 
 .header__contacts>ul>li:not(:first-child) {
@@ -1993,6 +1990,7 @@ input:focus::placeholder,textarea:focus::placeholder {
     position: relative;
     width: 20px;
     height: 15px;
+    background: rgba(0,0,0,0);
     z-index: 4;
     cursor: pointer;
     display: block
@@ -2105,7 +2103,8 @@ input:focus::placeholder,textarea:focus::placeholder {
     position: absolute;
     left: 0;
     top: 0;
-    height: 100%
+    height: 100%;
+    width: 100%
 }
 
 .hero__background {
@@ -2113,24 +2112,16 @@ input:focus::placeholder,textarea:focus::placeholder {
     -ms-user-select: none;
     user-select: none;
     pointer-events: none;
-    width: 100%;
     z-index: -1
-}
-
-.about-tour__itinerary-item--body,.we__title {
-    -webkit-user-select: none;
-    -ms-user-select: none
 }
 
 .hero__background::after {
     content: "";
-    width: 100%;
     background: rgba(39,39,44,.2);
     mix-blend-mode: multiply
 }
 
 .hero__background img {
-    width: 100%;
     -o-object-fit: cover;
     object-fit: cover
 }
@@ -2147,6 +2138,10 @@ input:focus::placeholder,textarea:focus::placeholder {
 
 .hero__text {
     margin-top: 35px;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: .075rem;
     display: none
 }
 
@@ -2179,10 +2174,17 @@ input:focus::placeholder,textarea:focus::placeholder {
     flex-direction: column
 }
 
+.about-us__title {
+    color: var(--white);
+    text-align: center
+}
+
 .about-us__text {
     padding-top: 40px;
+    color: var(--white);
     line-height: 150%;
-    font-size: .875rem
+    font-size: .875rem;
+    text-align: center
 }
 
 .about-us__text p:not(:first-child) {
@@ -2660,10 +2662,6 @@ input:focus::placeholder,textarea:focus::placeholder {
     align-self: self-start
 }
 
-.we {
-    overflow: hidden
-}
-
 .we__body {
     position: relative
 }
@@ -2678,12 +2676,13 @@ input:focus::placeholder,textarea:focus::placeholder {
     margin-top: -15%;
     -webkit-transform: translate(-10%,0);
     transform: translate(-10%,0);
+    -webkit-user-select: none;
+    -ms-user-select: none;
     user-select: none;
-    font-style: normal;
     z-index: -1
 }
 
-.team__slider,.team__slider--slide {
+.team__slider,.team__slider--slide,.tour-hero__body {
     position: relative
 }
 
@@ -2717,8 +2716,7 @@ input:focus::placeholder,textarea:focus::placeholder {
 .team__slider {
     background: var(--white);
     z-index: 2;
-    padding: 0 0 38px;
-    overflow: hidden
+    padding: 0 0 38px
 }
 
 .team__slider--track {
@@ -2840,7 +2838,6 @@ input:focus::placeholder,textarea:focus::placeholder {
 }
 
 .tour-hero__body {
-    position: relative;
     width: 100%;
     text-align: center;
     display: flex;
@@ -2849,23 +2846,21 @@ input:focus::placeholder,textarea:focus::placeholder {
     padding: calc(var(--height-header) + 40px) 0
 }
 
-.tour-hero__background {
+.tour-hero__background,.tour-hero__background::after {
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
     height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0
+}
+
+.tour-hero__background {
     z-index: -1;
     background: center/cover no-repeat
 }
 
 .tour-hero__background::after {
     content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
     background: rgba(39,39,44,.1);
     mix-blend-mode: multiply
 }
@@ -2998,8 +2993,7 @@ input:focus::placeholder,textarea:focus::placeholder {
     right: 0;
     top: 0;
     width: 50%;
-    height: 100%;
-    overflow: hidden
+    height: 100%
 }
 
 .about-tour__map img {
@@ -3084,7 +3078,7 @@ input:focus::placeholder,textarea:focus::placeholder {
     visibility: hidden
 }
 
-.about-tour__tab-block._active {
+.about-tour__tab-block._active,.contacts__map--point._visible .contacts__map--address {
     opacity: 1;
     visibility: visible
 }
@@ -3185,6 +3179,8 @@ input:focus::placeholder,textarea:focus::placeholder {
     padding-top: 16px;
     padding-bottom: 14px;
     border-bottom: 1px solid #d7dadd;
+    -webkit-user-select: none;
+    -ms-user-select: none;
     user-select: none
 }
 
@@ -3234,8 +3230,7 @@ input:focus::placeholder,textarea:focus::placeholder {
 }
 
 .about-tour__itinerary-item--content {
-    height: 0;
-    overflow: hidden
+    height: 0
 }
 
 .about-tour__itinerary-item--info {
@@ -3375,10 +3370,6 @@ input:focus::placeholder,textarea:focus::placeholder {
     transition: grid-template-rows .3s ease,-ms-grid-rows .3s ease
 }
 
-.about-tour__highlights-card--text>* {
-    overflow: hidden
-}
-
 .about-tour__highlights-footer {
     display: grid;
     gap: 40px;
@@ -3475,10 +3466,6 @@ input:focus::placeholder,textarea:focus::placeholder {
     padding: 0 20px
 }
 
-.about-tour__accordion--content>* {
-    overflow: hidden
-}
-
 .about-tour__accordion--content li {
     padding-left: 13px;
     position: relative
@@ -3497,6 +3484,7 @@ input:focus::placeholder,textarea:focus::placeholder {
 }
 
 .contacts {
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     padding-top: calc(var(--height-header) + 40px);
@@ -3556,6 +3544,14 @@ input:focus::placeholder,textarea:focus::placeholder {
     fill: #babcc0
 }
 
+.contacts__map--image img,.contacts__map--image svg {
+    right: 50%;
+    top: 0;
+    height: 100%;
+    width: auto;
+    position: absolute
+}
+
 .contacts__social {
     padding-top: 35px;
     display: flex;
@@ -3595,18 +3591,15 @@ input:focus::placeholder,textarea:focus::placeholder {
     text-transform: uppercase
 }
 
-.contacts__place h3,.footer__copy,.footer__nav>ul>li>ul>li>a,.footer__privacy a {
-    font-size: .75rem;
-    line-height: 125%
-}
-
 .contacts__place {
     padding-top: 35px
 }
 
 .contacts__place h3 {
     color: #babcc0;
+    font-size: .75rem;
     font-weight: 600;
+    line-height: 125%;
     letter-spacing: .0375rem;
     text-transform: uppercase;
     margin-bottom: 5px
@@ -3636,17 +3629,61 @@ input:focus::placeholder,textarea:focus::placeholder {
 }
 
 .contacts__map--image img {
-    position: absolute;
-    right: 50%;
-    top: 0;
-    width: auto;
-    height: 100%;
     -webkit-transform: translate(45%,0);
     transform: translate(45%,0);
     -o-object-fit: contain;
     object-fit: contain;
     -o-object-position: center;
     object-position: center
+}
+
+.contacts__map--image svg {
+    -webkit-transform: translate(45%,0);
+    transform: translate(45%,0)
+}
+
+.contacts__map--image svg .country {
+    transition: fill .3s ease,fill-opacity .3s ease
+}
+
+.contacts__map--image svg .country._hover,.contacts__map--image svg .country:hover {
+    fill: #eb6244;
+    fill-opacity: 1
+}
+
+.contacts__map--point {
+    position: absolute;
+    right: var(--right,auto);
+    bottom: var(--bottom);
+    left: var(--left,auto);
+    color: var(--white);
+    text-align: var(--align);
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    display: none
+}
+
+.contacts__map--city {
+    color: #fff;
+    font-size: 1.111111vw;
+    font-weight: 400;
+    line-height: 105%
+}
+
+.contacts__map--address {
+    padding: 5px 0;
+    font-size: .694444vw;
+    line-height: 155%;
+    transition: opacity .2s ease,visibility .2s ease;
+    opacity: 0;
+    visibility: hidden
+}
+
+.footer__copy,.footer__nav>ul>li>ul>li>a,.footer__privacy a {
+    font-weight: 400;
+    line-height: 125%
 }
 
 .footer {
@@ -3685,7 +3722,7 @@ input:focus::placeholder,textarea:focus::placeholder {
 .footer__nav>ul>li>ul>li>a {
     padding: 5px 0;
     color: #d7dadd;
-    font-weight: 400;
+    font-size: .75rem;
     transition: color .1s ease
 }
 
@@ -3727,7 +3764,7 @@ input:focus::placeholder,textarea:focus::placeholder {
     padding-top: 20px;
     color: #707079;
     text-align: center;
-    font-weight: 400;
+    font-size: .75rem;
     text-transform: uppercase
 }
 
@@ -3741,7 +3778,7 @@ input:focus::placeholder,textarea:focus::placeholder {
 .footer__privacy a {
     color: #d7dadd;
     text-align: center;
-    font-weight: 400;
+    font-size: .75rem;
     text-decoration-line: underline;
     transition: color .1s ease
 }
@@ -3902,6 +3939,10 @@ input:focus::placeholder,textarea:focus::placeholder {
         text-align: left
     }
 
+    .subscribe__checkbox,.subscribe__label,.subscribe__submit {
+        grid-column: 2 span
+    }
+
     .container {
         padding-left: var(--desktop-container-padding);
         padding-right: var(--desktop-container-padding)
@@ -3953,9 +3994,8 @@ input:focus::placeholder,textarea:focus::placeholder {
     }
 
     .header__contacts,.header__nav--list>li>ul {
-        top: 100%;
         opacity: 0;
-        transition: opacity .3s ease,visibility .3s ease;
+        visibility: hidden;
         position: absolute
     }
 
@@ -3986,8 +4026,9 @@ input:focus::placeholder,textarea:focus::placeholder {
     .header__nav--list>li>ul {
         padding-top: 20px;
         left: -100px;
+        top: 100%;
         width: calc(100% + 100px);
-        visibility: hidden;
+        transition: opacity .3s ease,visibility .3s ease;
         grid-template-columns: auto auto auto;
         height: auto;
         overflow: visible
@@ -4020,9 +4061,10 @@ input:focus::placeholder,textarea:focus::placeholder {
 
     .header__contacts {
         right: -12px;
+        top: 100%;
         z-index: 2;
         padding-top: 30px;
-        visibility: hidden;
+        transition: opacity .3s ease,visibility .3s ease;
         margin-top: 0
     }
 
@@ -4215,12 +4257,7 @@ input:focus::placeholder,textarea:focus::placeholder {
     }
 
     .subscribe__label {
-        margin-top: 30px;
-        grid-column: 2 span
-    }
-
-    .subscribe__checkbox,.subscribe__submit {
-        grid-column: 2 span
+        margin-top: 30px
     }
 
     .follow-us {
@@ -4398,19 +4435,19 @@ input:focus::placeholder,textarea:focus::placeholder {
     }
 
     .contacts__map--image {
-        padding-top: 59.782609%
+        padding-top: 62%
     }
 
-    .contacts__map--image img {
+    .contacts__map--image svg {
         width: 100%;
-        height: 100%;
+        height: auto;
         right: 0;
         -webkit-transform: none;
-        transform: none;
-        -o-object-fit: contain;
-        object-fit: contain;
-        -o-object-position: right top;
-        object-position: right top
+        transform: none
+    }
+
+    .contacts__map--point {
+        display: block
     }
 
     .footer {
